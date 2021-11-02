@@ -186,47 +186,19 @@ void algorythmLittle(double** Matrix, int amountOfGraphs) {
 		}
 		makebase(Matrix, amountOfGraphs, i3, j3);
 	}
-	/*for (int i = 0; i < amountOfGraphs; i++) {
-		for (int j = 0; j < amountOfGraphs; j++) {
-			cout << Matrix[i][j] << " ";
-		}
-		cout << endl;
-	}*/
 }
 
 int getKeyFromValue(map<int, int> assArr, int value)
 {
-	bool a = true;
 	for (auto& it : assArr) {
 		if (it.second == value) {
 			return it.first;
-			a = false;
 		}
 	}
-	if (a) {
-		return -1;
-	}
+	return -1;
 }
 
-/*int getKeyFromValue(map<int, int> assArr, int value) {
-	auto findResult = std::find_if(std::begin(assArr), std::end(assArr), [&](const std::pair<int, int>& pair)
-		{
-			return pair.second == value;
-		});
-	return (int) findResult;
-}*/
-
-bool equals(TrainSched one, TrainSched two) {
-	if (one.getNumber() == two.getNumber() &&
-		one.getStartPoint() == two.getStartPoint() &&
-		one.getDestPoint() == two.getDestPoint() &&
-		one.getCost() == two.getCost())
-		return true;
-	else
-		return false;
-}
-
-void findOptimalPath(double** Matrix, double** origMatrix, vector<TrainSched> trains, map<int, int> assArr, int amountOfGraphs) {
+void printOptimalPath(double** Matrix, double** origMatrix, vector<TrainSched> trains, map<int, int> assArr, int amountOfGraphs) {
 	vector<vector<TrainSched>> results;
 	int k = 0, l = 0;
 	int i2 = 0;
@@ -237,20 +209,15 @@ void findOptimalPath(double** Matrix, double** origMatrix, vector<TrainSched> tr
 			for (TrainSched i : trains) {
 				if (i.getStartPoint() == getKeyFromValue(assArr, i2) &&
 					i.getDestPoint() == getKeyFromValue(assArr, j) &&
-					i.getCost() == origMatrix[i2][j]) {
-
+					i.getCost() == origMatrix[i2][j]){
 					printf("\t\t%c\n", 25);
 					cout << i.toString() << endl;
+					break;
 				}
 			}
 			i2 = j;
 			break;
 		}
-	}
-	for (int i = 0; i < results.size(); i++) {
-		for (int j = 0; j < results[i].size(); j++)
-			cout << results[i][j].toString() << " ";
-		cout << endl;
 	}
 }
 
@@ -285,31 +252,3 @@ void printAssociateArray(map<int, int> assArr) {
 		cout << it->first << " => " << it->second << '\n';
 	}
 }
-
-/*void del_row(double** arr, int& ROW, const int COL, const int number) {
-
-	if (number < 1 || number > ROW) {
-		cout << "error string number " << number << ": erase ignore\n";
-		return;
-	}
-
-	delete[]arr[number - 1];
-	ROW--;
-	for (int i = number - 1; i < ROW; i++) arr[i] = arr[i + 1];
-
-	cout << "string " << number << " was delete\n";
-}
-
-void removeColumn(double** matrix, int col, int* width, int height)
-{
-	int j, i;
-	for (j = 0; j < height; ++j) {
-		if (col == *width - 1) {
-			continue;
-		}
-		for (i = col; i < *width; ++i) {
-			matrix[j][i] = matrix[j][i + 1];
-		}
-	}
-	--(*width);
-}*/
