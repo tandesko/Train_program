@@ -12,4 +12,4 @@ Implementation of algorythm for train schedule.
 ## More detailed description can be found in the code comments throughout the program.
 
 ### Result
-<img src="https://ibb.co/r5cdPSq">
+![Test Image 1](1.png)
