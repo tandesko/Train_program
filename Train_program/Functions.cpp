@@ -97,7 +97,9 @@ map<int, int> buildAssociateArray(vector<TrainSched> trains) {
 	return tmp;
 }
 
-
+/*
+* Function used by Little's algorithm.
+*/
 void makebase(double** Matrix, int amountOfGraphs, int ik, int jk)
 {
 	int i, j;
@@ -109,9 +111,11 @@ void makebase(double** Matrix, int amountOfGraphs, int ik, int jk)
 
 /*
 * Function for finding a way through all cities and returning back to the starting one
-* with optimal cost. We enter 2D-matrix with costs and receive the optimal path.
+* with optimal cost by using Little's algorithm. We enter 2D-matrix with costs 
+* and receive the optimal path. Detailed description of the algorithm can be found there:
+* https://www.researchgate.net/publication/307554084_On_the_Optimization_and_Parallelizing_Little_Algorithm_for_Solving_the_Traveling_Salesman_Problem
 */
-void algorythmLittle(double** Matrix, int amountOfGraphs) {
+void algorithmLittle(double** Matrix, int amountOfGraphs) {
 	double minv, miniv, minjv, maxv;
 	bool flag;
 	int cnt;
@@ -188,6 +192,9 @@ void algorythmLittle(double** Matrix, int amountOfGraphs) {
 	}
 }
 
+/*
+* Function that returns a key from a value in a map.
+*/
 int getKeyFromValue(map<int, int> assArr, int value)
 {
 	for (auto& it : assArr) {
@@ -198,6 +205,11 @@ int getKeyFromValue(map<int, int> assArr, int value)
 	return -1;
 }
 
+/*
+* Function that prints optimal path from matrix, that was received from Little's algorithm.
+* Matrix was copied, because it will be transformed by the Little's algorithm.
+* But we need original matrix in order to restore an element from train schedule.
+*/
 void printOptimalPath(double** Matrix, double** origMatrix, vector<TrainSched> trains, map<int, int> assArr, int amountOfGraphs) {
 	vector<vector<TrainSched>> results;
 	int k = 0, l = 0;

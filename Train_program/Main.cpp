@@ -14,7 +14,7 @@ int main() {
 		for (int j = 0; j < amountOfGraphs; j++)
 			origMatrix[i][j] = Matrix[i][j];
 	}
-	algorythmLittle(Matrix, amountOfGraphs);
+	algorithmLittle(Matrix, amountOfGraphs);
 	printOptimalPath(Matrix, origMatrix, trainSchedule, assArr, amountOfGraphs);
 	return 0;
 }
