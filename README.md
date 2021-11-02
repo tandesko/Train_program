@@ -9,7 +9,7 @@ Implementation of algorithm for train schedule.
 5. Run Little's algorithm.
 6. Get optimal path for the cost.
 
-##Little's algorithm
+## Little's algorithm [ReserchGate](https://www.researchgate.net/publication/307554084_On_the_Optimization_and_Parallelizing_Little_Algorithm_for_Solving_the_Traveling_Salesman_Problem)
 1. We carry out the reduction of the matrix **D** row by row by subtracting from all elements of each row the minimum value in the row. Obviously, the shortest route after such an operation will remain the shortest.
 2. Similarly, we carry out the reduction of the matrix **D** by columns.
 3. The sum of the minimum values subtracted at the previous two stages will be called the reduction constant. It has the meaning of a lower bound for the length of the shortest route. If now it was possible to construct a Hamiltonian cycle only from edges of zero length, this would be the best option.
