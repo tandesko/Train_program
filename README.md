@@ -1,6 +1,8 @@
 # Train_program
 Implementation of algorithm for train schedule.
 
+## Only part with the best path for cost was solved.
+
 ## How it works?
 1. Read train schedule from CSV-file.
 2. Build an associate array to operate simpler with cycles.
