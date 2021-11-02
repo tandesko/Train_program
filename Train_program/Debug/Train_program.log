@@ -1,0 +1,5 @@
+﻿  Functions.cpp
+C:\Users\Serzh\source\repos\Train_program\Train_program\Functions.cpp(250,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Serzh\source\repos\Train_program\Train_program\Functions.cpp(251,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Serzh\source\repos\Train_program\Train_program\Functions.cpp(209): warning C4715: 'getKeyFromValue': not all control paths return a value
+  Train_program.vcxproj -> C:\Users\Serzh\source\repos\Train_program\Debug\Train_program.exe
